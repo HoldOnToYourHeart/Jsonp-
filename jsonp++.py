@@ -145,7 +145,7 @@ class BurpExtender(IBurpExtender, ITab, IHttpListener, IMessageEditorController,
             if res_mime in mime and ".js" not in str(url) and request_method == 'GET':
                 # 获取 正则 匹配后的正文
                 try:
-                    res_bodys1 = (re.findall(".*?({.*}).*", res_bodys, re.S))[0]
+                    res_bodys1 = (re.findall(".*\(({.*})\).*", res_bodys, re.S))[0]
                 except:
                     pass
                 else:
